@@ -1,3 +1,4 @@
+//题目有误，应为最长增序列
 #include <iostream>
 
 using namespace std;
@@ -11,9 +12,9 @@ int longest(int *arr, int n)
 		len[i] = 1;
 		for(int j = 0; j != i; j++)
 		{
-			if(arr[i] >= arr[j])
+			if(arr[i] > arr[j])
 			{
-				len[i] = len[i] > len[j] + 1 ? len[i] : len[j] + 1;
+				len[i] = len[i] > (len[j] + 1) ? len[i] : (len[j] + 1);
 			}
 		}
 		max = max > len[i] ? max : len[i];
